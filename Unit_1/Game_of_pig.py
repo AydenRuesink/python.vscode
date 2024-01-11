@@ -21,7 +21,7 @@ def game():
                 round_score = 0
                 player = 1 - player 
             else:
-                round_score += roll
+                round_score += die 
     
         elif pick == 'b':
             player_scores[player] += round_score
@@ -34,4 +34,4 @@ def game():
     
     print("Player "+str(player_scores.index(max(player_scores))+1)+" wins!")
 
-game()
+print(game())

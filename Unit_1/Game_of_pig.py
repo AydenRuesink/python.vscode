@@ -31,4 +31,4 @@ while max(player_scores) < 100:
     else:
         print("Not a valid input. Enter 'r' to roll or 'b' to bank")
     
-    print("Player "+str(player_scores.index(max(player_scores))+1)+" rwins!")
+print("Player "+str(player_scores.index(max(player_scores))+1)+" wins!")

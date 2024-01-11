@@ -13,15 +13,15 @@ def game():
         print('Player',{player+1},'turn') 
         pick = input('Do you want to roll (r) or bank (b)? ').lower()   
         if pick ==  'r':
-            die = roll()
-            print('You rolled a '+str(die))
+            die_number = roll()
+            print('You rolled a',die_number)
 
             if roll == 1:
                 print('Round over, You rolled a 1.')
                 round_score = 0
                 player = 1 - player 
             else:
-                round_score += die 
+                round_score += die_number 
     
         elif pick == 'b':
             player_scores[player] += round_score

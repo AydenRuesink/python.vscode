@@ -3,7 +3,6 @@ import random
 def roll():
     return random.randint(1,6)
 
-
 def game():
     player_scores = [0,0]
     player = 0 

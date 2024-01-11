@@ -14,7 +14,7 @@ def game():
         pick = input('Do you want to roll (r) or bank (b)? ').lower()   
         if pick ==  'r':
             die = roll()
-            print('You rolled a '+str(roll))
+            print('You rolled a '+str(die))
 
             if roll == 1:
                 print('Round over, You rolled a 1.')

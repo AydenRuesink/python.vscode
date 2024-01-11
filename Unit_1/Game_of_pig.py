@@ -12,9 +12,8 @@ def game():
     while max(player_scores) < 100:
         print('Player',{player+1},'turn') 
         pick = input('Do you want to roll (r) or bank (b)? ').lower()   
-
         if pick ==  'r':
-            roll = roll()
+            die = roll()
             print('You rolled a '+str(roll))
 
             if roll == 1:

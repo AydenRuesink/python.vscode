@@ -24,7 +24,7 @@ def game():
     
         elif pick == 'b':
             player_scores[player] += round_score
-            print('Player '+str(player + 1)+ 'banked '+str(player_scores[player]))
+            print('Player '+str(player + 1)+ ' banked '+str(player_scores[player]))
             round_score = 0
             player = 1 - player 
     

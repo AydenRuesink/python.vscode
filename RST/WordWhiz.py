@@ -91,12 +91,17 @@ def Wordle():
                 print('Not a valid Answer!!') 
             break
             #Variable finds the correct letters by comparing it with zip
-        if len(wordle_guess) > 5:
-            print("Too many letters, you just lost a life, try to input a 5 letter word next time")
+        elif len(wordle_guess) > 5:
+            print("Too many letters, Instant disqualification, try to input a 5 letter word next time") 
+            wordle_num += 10
+        elif len(wordle_guess) < 5:
+            print('Not enough  letters, Instant disqualification, try to input a 5 letter word next time')
+            wordle_num += 10
+
         else:
             correct_letters = {
                 letter for letter, correct in zip(wordle_guess, wordle_word) if letter == correct
-    }
+            }
         #Finds misplaced letters
             misplaced_letters = set(wordle_guess) & set(wordle_word) - correct_letters
         #Finds wrong letters
@@ -126,6 +131,7 @@ def Wordle():
                 else:
                     print('Not a valid Answer!!')
                 break
+
     
 def Unscramble():
     #Allows lives to be manipulated in def

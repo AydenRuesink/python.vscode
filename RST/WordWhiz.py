@@ -91,46 +91,39 @@ def Wordle():
                 print('Not a valid Answer!!') 
             break
             #Variable finds the correct letters by comparing it with zip
-        elif len(wordle_guess) > 5:
-            print("Too many letters, Instant disqualification, try to input a 5 letter word next time") 
-            wordle_num += 10
-        elif len(wordle_guess) < 5:
-            print('Not enough  letters, Instant disqualification, try to input a 5 letter word next time')
-            wordle_num += 10
-
-        else:
-            correct_letters = {
-                letter for letter, correct in zip(wordle_guess, wordle_word) if letter == correct
-            }
+            
+        correct_letters = {
+            letter for letter, correct in zip(wordle_guess, wordle_word) if letter == correct
+        }
         #Finds misplaced letters
-            misplaced_letters = set(wordle_guess) & set(wordle_word) - correct_letters
+        misplaced_letters = set(wordle_guess) & set(wordle_word) - correct_letters
         #Finds wrong letters
-            wrong_letters = set(wordle_guess) - set(wordle_word)
+        wrong_letters = set(wordle_guess) - set(wordle_word)
         
         #displays the letter placement 
-            print("Correct letters:", ", ".join(sorted(correct_letters)))
-            print("Misplaced letters:", ", ".join(sorted(misplaced_letters)))
-            print("Wrong letters:", ", ".join(sorted(wrong_letters)))
+        print("Correct letters:", ", ".join(sorted(correct_letters)))
+        print("Misplaced letters:", ", ".join(sorted(misplaced_letters)))
+        print("Wrong letters:", ", ".join(sorted(wrong_letters)))
 
         #If after 6 tries the user does not get the word it displays an output 
-            if wordle_num == 6:
-                print('Sorry you lost')
-                print('The word was',wordle_word)
-                print('\n')
-                wordle_again = input('Do you want to play again? 1 for yes, 2 for no: ')
-                if wordle_again == '1':
-                    Wordle()
-                elif wordle_again == '2':
-                    print('You earned',str(wordle_points),'points.')
-                    wordle_points = 0 
-                    change_game = input('Would you like to switch games? 1 for yes, 2 for no: ')
-                    if change_game == '1':
-                        Unscramble()
-                    else:
-                        print('Thanks for Playing!!!')
+        if wordle_num == 6:
+            print('Sorry you lost')
+            print('The word was',wordle_word)
+            print('\n')
+            wordle_again = input('Do you want to play again? 1 for yes, 2 for no: ')
+            if wordle_again == '1':
+                Wordle()
+            elif wordle_again == '2':
+                print('You earned',str(wordle_points),'points.')
+                wordle_points = 0 
+                change_game = input('Would you like to switch games? 1 for yes, 2 for no: ')
+                if change_game == '1':
+                    Unscramble()
                 else:
-                    print('Not a valid Answer!!')
-                break
+                    print('Thanks for Playing!!!')
+            else:
+                print('Not a valid Answer!!')
+            break
 
     
 def Unscramble():
